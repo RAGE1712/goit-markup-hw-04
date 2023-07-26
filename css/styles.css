@@ -156,9 +156,14 @@ img {
 }
 
 /**----------------- Section 1 ----------------*/
-.solutions {
+.hero {
   background-color: var(--hero-background);
   padding: 188px 0;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(/images/heroimg.jpg);
 }
 .hero-header {
   color: var(--primary-background-color);
@@ -172,7 +177,7 @@ img {
   max-width: 496px;
   margin: 0 auto;
 }
-.solutions .order-button {
+.hero .order-button {
   background: var(--primary-brand-color);
   color: var(--primary-background-color);
   font-family: var(--primary-font);
@@ -192,8 +197,8 @@ img {
   margin: 48px auto;
   margin-bottom: 0;
 }
-.solutions .order-button:hover,
-.solutions .order-button:focus {
+.hero .order-button:hover,
+.hero .order-button:focus {
   background-color: var(--active-link-color);
 }
 /**----------------------- Section 2 ----------------*/
@@ -296,10 +301,66 @@ img {
 .team-photo-desc {
   padding: 32px 0px;
 }
+
+/**--------------- Section 5 -------------*/
+.customers-container {
+  padding-bottom: 120px;
+}
+.customers-header {
+  color: var(--headings-color);
+  text-align: center;
+  font-family: var(--primary-font);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  margin-bottom: 72px;
+  margin-top: 120px;
+}
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+
+.customers-item {
+  width: calc((100% - 24px * 5) / 6);
+  height: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--subtle-text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customers-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  fill: var(--subtle-text-color);
+  margin: 16px 32px;
+}
+
+.customers-item:hover {
+  border-color: var(--active-link-color);
+}
+.customers-item:hover .customers-icon {
+  fill: var(--active-link-color);
+}
+
 /**------------------ Footer ----------------------*/
 .footer {
   background-color: #2e2f42;
   padding: 100px 0;
+}
+.footer-container {
+  display: flex;
+  gap: 120px;
+  align-items: flex-start;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
 }
 .motto {
   color: var(--light-mode-background);
@@ -318,14 +379,48 @@ img {
   line-height: 21px;
   letter-spacing: 0.54px;
   text-transform: uppercase;
+  padding: 0;
 }
 
 .footer .logo {
   display: inline-block;
   margin-bottom: 16px;
   margin-right: 0;
+  padding: 0;
+}
+.socialmedia-conteiner {
+  display: flex;
+  flex-direction: column;
+}
+.socialmedia-header {
+  color: var(--primary-background-color);
+  font-family: var(--primary-font);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+  margin-bottom: 16px;
+}
+.socialmedia-list {
+  display: flex;
+  gap: 16px;
 }
 
+.socialmedia-item {
+}
+.socialmedia-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-brand-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.socialmedia-icon {
+  fill: var(--light-mode-background);
+}
 /**--------------------- Portfolio ----------------*/
 .filters {
   padding-top: 96px;
