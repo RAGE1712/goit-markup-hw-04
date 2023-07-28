@@ -175,7 +175,7 @@ img {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(./images/heroimg.jpg);
+    url(../images/heroimg.jpg);
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: contain;
