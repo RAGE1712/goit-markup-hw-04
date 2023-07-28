@@ -75,10 +75,9 @@ img {
   color: var(--primary-brand-color);
   font-family: Raleway, sans-serif;
   font-size: 18px;
-  font-style: normal;
   font-weight: 800;
   line-height: 1.17;
-  letter-spacing: 0.54px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
   margin-right: 76px;
@@ -88,10 +87,10 @@ img {
   color: var(--headings-color);
   font-family: Raleway, sans-serif;
   font-size: 18px;
-  font-style: normal;
+
   font-weight: 800;
   line-height: 1.17;
-  letter-spacing: 0.54px;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
 }
 
@@ -113,10 +112,9 @@ img {
   color: var(--headings-color);
   font-family: var(--primary-font);
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   text-decoration: none;
   padding-top: 24px;
   display: flex;
@@ -144,7 +142,6 @@ img {
 }
 /**------------------- Contacts ----------------- */
 .address {
-  font-style: normal;
   display: flex;
   align-items: center;
 }
@@ -159,17 +156,18 @@ img {
   font-family: var(--primary-font);
   font-size: 16px;
   font-style: normal;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   text-decoration: none;
   padding: 24px 0px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus {
   color: var(--active-link-color);
 }
 
-/**----------------- Section 1 ----------------*/
+/**----------------- Section 1 Hero ----------------*/
 .hero {
   background-color: var(--hero-background);
   padding: 188px 0;
@@ -178,16 +176,18 @@ img {
       rgba(46, 47, 66, 0.7)
     ),
     url(/images/heroimg.jpg);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
 }
 .hero-header {
   color: var(--primary-background-color);
   text-align: center;
   font-family: var(--primary-font);
   font-size: 56px;
-  font-style: normal;
   font-weight: 700;
   line-height: 1.07;
-  letter-spacing: 1.12px;
+  letter-spacing: 0.02em;
   max-width: 496px;
   margin: 0 auto;
 }
@@ -196,12 +196,10 @@ img {
   color: var(--primary-background-color);
   font-family: var(--primary-font);
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.64px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   cursor: pointer;
-
   padding: 16px 32px;
   display: block;
   min-width: 169px;
@@ -210,6 +208,7 @@ img {
   border-radius: 4px;
   margin: 48px auto;
   margin-bottom: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-button:hover,
 .order-button:focus {
@@ -224,11 +223,12 @@ img {
   width: 100%;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
+  transition: opacity 300ms linear, visibility 300ms linear;
 }
 
 .modal {
   width: 408px;
-  height: 584px;
+  min-height: 584px;
   border-radius: 4px;
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
@@ -236,7 +236,11 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleY(1);
+  transition: transform 300ms linear;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scaleY(0);
 }
 
 .close-button {
@@ -253,6 +257,8 @@ img {
   align-items: center;
   justify-content: center;
   border: 1px solid #rgba(0, 0, 0, 10%);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-button:hover {
@@ -272,7 +278,7 @@ img {
   overflow: hidden;
 }
 
-/**----------------------- Section 2 ----------------*/
+/**----------------------- Section 2 Advantages ----------------*/
 .advantages {
   padding: 120px 0;
 }
@@ -302,18 +308,18 @@ img {
   font-family: var(--primary-font);
   font-size: 20px;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.4px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 .advantages-description {
   color: var(--text-color);
   font-family: var(--primary-font);
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
-/**--------------------- Section 3 -----------------*/
+/**--------------------- Section 3 What Are We Doing -----------------*/
 .works {
   padding-bottom: 120px;
 }
@@ -331,7 +337,7 @@ img {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.02em;
   text-transform: capitalize;
   margin-bottom: 72px;
   max-width: 324px;
@@ -340,7 +346,7 @@ img {
   margin-bottom: 72px;
 }
 
-/**--------------- Section 4 -------------*/
+/**--------------- Section 4 TEAM -------------*/
 .team {
   background-color: var(--light-mode-background);
   padding: 120px 0;
@@ -352,7 +358,7 @@ img {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.02em;
   text-transform: capitalize;
   margin-bottom: 72px;
 }
@@ -364,6 +370,9 @@ img {
   background-color: var(--primary-background-color);
   width: calc((100% - 72px) / 4);
   border-radius: 0px 0px 4px 4px;
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .team-name {
   color: var(--headings-color);
@@ -380,7 +389,7 @@ img {
   text-align: center;
   font-family: var(--primary-font);
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
 }
 .team-photo-desc {
@@ -406,7 +415,7 @@ img {
   fill: var(--light-mode-background);
 }
 
-/**--------------- Section 5 -------------*/
+/**--------------- Section 5 Clients -------------*/
 .customers-container {
   padding-bottom: 120px;
 }
@@ -417,7 +426,7 @@ img {
   font-size: 36px;
   font-weight: 700;
   line-height: 1.11;
-  letter-spacing: 0.72px;
+  letter-spacing: 0.02em;
   text-transform: capitalize;
   margin-bottom: 72px;
   margin-top: 120px;
@@ -435,6 +444,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon {
@@ -443,12 +453,16 @@ img {
   justify-content: center;
   fill: var(--subtle-text-color);
   margin: 16px 32px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.customers-item:hover {
+.customers-item:hover,
+.customers-item:focus {
   border-color: var(--active-link-color);
 }
-.customers-item:hover .customers-icon {
+
+.customers-icon-link:hover .customers-icon,
+.customers-icon-link:focus .customers-icon {
   fill: var(--active-link-color);
 }
 
@@ -470,18 +484,17 @@ img {
   color: var(--light-mode-background);
   font-family: var(--primary-font);
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
   max-width: 264px;
 }
 .footer .logo-studio {
   color: var(--light-mode-background);
   font-family: Raleway, sans-serif;
   font-size: 18px;
-  font-style: normal;
   font-weight: 800;
-  line-height: 21px;
-  letter-spacing: 0.54px;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   padding: 0;
 }
@@ -500,10 +513,9 @@ img {
   color: var(--primary-background-color);
   font-family: var(--primary-font);
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1, 5;
+  letter-spacing: 0.02em;
   margin-bottom: 16px;
 }
 .socialmedia-list {
@@ -521,6 +533,11 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.socialmedia-link:hover,
+.socialmedia-link:focus {
+  background-color: var(--success-color);
 }
 .socialmedia-icon {
   fill: var(--light-mode-background);
@@ -544,12 +561,14 @@ img {
   font-family: var(--primary-font);
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.64px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
   cursor: pointer;
   padding: 12px 24px;
   border-radius: 4px;
   border: 1px solid var(--accent-color);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover,
 .filter-button:focus {
@@ -565,21 +584,30 @@ img {
   font-family: var(--primary-font);
   font-size: 20px;
   font-weight: 500;
-  line-height: 24px;
-  letter-spacing: 0.4px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
 .project-type {
   color: var(--text-color);
   font-family: var(--primary-font);
   font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 .projects-item {
   border: 1px solid var(--accent-color);
   background: var(--primary-background-color);
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.projects-item:hover,
+.projects-item:focus {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+.project-item-link {
 }
 .project-description {
   padding: 32px 16px;
@@ -592,39 +620,30 @@ img {
   column-gap: 24px;
   row-gap: 48px;
 }
-
 /*! ----------- animation -------- */
-.image-box {
-  position: relative;
-  overflow: hidden;
-}
-
-.overlay {
+.projects-cover {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  background: var(--primary-brand-color);
   height: 100%;
-  background-color: var(--primary-brand-color);
-  transform: translatey(100%);
-  transition: transform 250ms ease-in-out;
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.image-box:hover .overlay {
-  transform: translatey(0);
-}
-
-.overlay-text {
-  width: 296px;
+.projects-cover-text {
   color: var(--light-mode-background);
   font-family: var(--primary-font);
   font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.32px;
-  margin: 40px 32px 164px 32px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+.project-cover-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.project-item-link:hover .projects-cover,
+.project-item-link:focus .projects-cover {
+  transform: translateY(0);
 }
