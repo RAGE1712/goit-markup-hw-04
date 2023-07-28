@@ -257,6 +257,7 @@ img {
 
 .close-button {
   position: absolute;
+  padding: 0;
   right: 24px;
   top: 24px;
   border-radius: 50%;
@@ -271,8 +272,12 @@ img {
   border: 1px solid rgba(0, 0, 0, 10%);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.closemodal {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .close-button:hover,
 .close-button:focus {
   background-color: var(--active-link-color);
